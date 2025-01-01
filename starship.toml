@@ -22,6 +22,7 @@ ${custom.jjstate_deleted}\
 ${custom.jj}\
 [ ](fg:color_bg bg:color_bg)\
 $c\
+${custom.clang}\
 ${custom.cpp-gcc}\
 $rust\
 $golang\
@@ -170,11 +171,20 @@ style = 'fg:color_git_delete bg:color_bg'
 
 
 [c]
+disabled = true
 symbol = 'gcc: '
 format = '[$symbol($version )]($style)'
 style = 'fg:color_fg_recognized bg:color_bg'
 
+[custom.clang]
+symbol = 'clang: '
+format = '[$symbol($output )]($style)'
+style = 'fg:color_fg_recognized bg:color_bg'
+detect_extensions = ['cpp', 'c++', 'hpp', 'h++', 'c', 'h']
+command = "clang++ --version | string split ' ' | head -n 3 | tail -n 1"
+
 [custom.cpp-gcc]
+disabled = true
 symbol = 'g++: '
 format = '[$symbol($output )]($style)'
 style = 'fg:color_fg_recognized bg:color_bg'
