@@ -40,6 +40,7 @@ $meson\
 ${env_var.shell}\
 $shell\
 ${custom.nvim}\
+${nix_shell}\
 [ ](fg:color_bg bg:color_bg)\
 $cmd_duration\
 [ ](fg:color_bg)\
@@ -91,6 +92,10 @@ command = "nvim --version | head -n 1 | tr ' ' '\n' | tail -n 1"
 symbol = 'Meson: '
 format = '[$symbol(\($project\) )]($style)'
 style = 'fg:color_fg_recognized bg:color_bg'
+
+[nix_shell]
+format = '[$state nix shell]($style)'
+style = 'fg:color_blue bg:color_bg'
 
 
 
@@ -218,6 +223,16 @@ style = 'fg:color_fg_recognized bg:color_bg'
 
 [rust]
 symbol = ''
+format = '[$symbol ($version )]($style)'
+style = 'fg:color_fg_recognized bg:color_bg'
+
+[java]
+symbol = ''
+format = '[$symbol ($version )]($style)'
+style = 'fg:color_fg_recognized bg:color_bg'
+
+[kotlin]
+symbol = ''
 format = '[$symbol ($version )]($style)'
 style = 'fg:color_fg_recognized bg:color_bg'
 
